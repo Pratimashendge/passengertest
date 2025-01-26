@@ -1,0 +1,24 @@
+<p>pass-dash works!</p>
+<h2>Passenger Info:</h2>
+<ng-container *ngIf="passengerArr.length > 0; else noPass">
+  <app-pass-count
+    [getTotalCount]="passengerArr.length"
+    [getCheckInCount]="CheckInCount"
+  ></app-pass-count>
+  <ul class="list-group my-5">
+    <li
+      *ngFor="let data of passengerArr"
+      class="list-group-item mb-1 text-dark"
+    >
+      {{ data.fullname }}
+    </li>
+  </ul>
+  <app-pass-card
+    (emitpassInfo)="getEmitInfo($event)"
+    *ngFor="let data of passengerArr"
+    [passObj]="data"
+  ></app-pass-card>
+</ng-container>
+<ng-template #noPass>
+  <p class="alert alert-danger">no passsanger data</p>
+</ng-template>

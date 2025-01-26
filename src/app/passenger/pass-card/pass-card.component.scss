@@ -1,0 +1,40 @@
+.passCard {
+    .form-control:disabled {
+        background-color: transparent;
+        opacity: 1;
+        border-color: transparent;
+    }
+
+    .form-group {
+        position: relative;
+    }
+
+    .form-group span {
+        width: 12px;
+        height: 12px;
+        display: inline-block;
+        align-self: center;
+        border-radius: 50%;
+        // background-color: red;
+    }
+
+    // .form-group {
+    //   position: relative;
+    //   &::after {
+    //     // & >> .form-group
+    //     content: "";
+    //     position: absolute;
+    //     height: 12px;
+    //     width: 12px;
+    //     left: -12px;
+    //     top: 13px;
+    //     border-radius: 50%;
+    //   }
+    // }
+    // .form-group.CheckIn::after {
+    //   background-color: yellowgreen;
+    // }
+    // .form-group.notCheckIn::after {
+    //   background-color: orangered;
+    // }
+}

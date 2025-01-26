@@ -1,0 +1,58 @@
+<p>pass-card works!</p>
+<div class="card mb-4 passCard text-dark">
+  <div class="card-body">
+    <!-- <div
+      [ngClass]="{
+        CheckIn: passObj.checkin,
+        notCheckIn: !passObj.checkin
+      }"
+      class="form-group"
+    > -->
+    <div class="form-group d-flex">
+      <span
+        [ngClass]="{
+          'bg-success': passObj.checkindate,
+          'bg-danger': !passObj.checkindate
+        }"
+      ></span>
+      <input
+        [disabled]="!isHide"
+        #passName
+        type="text"
+        [value]="passObj.fullname"
+        class="form-control"
+      />
+    </div>
+    <p>
+      Check in Date :
+      <strong>{{ (passObj.checkindate | date) ?? "No Checkin" }}</strong>
+    </p>
+
+    <p>
+      children : <strong>{{ passObj.children?.length ?? "0" }}</strong>
+    </p>
+    <mat-divider></mat-divider>
+    <br />
+    <button
+      (click)="isHide = !isHide"
+      *ngIf="!isHide"
+      mat-raised-button
+      color="primary"
+      class="mr-3"
+    >
+      Edit
+    </button>
+    <button
+      (click)="isHide = !isHide; onPassUpdate()"
+      *ngIf="isHide"
+      mat-raised-button
+      color="primary"
+      class="mr-3"
+    >
+      Done
+    </button>
+    <button (click)="onRemove(passObj.id)" mat-raised-button color="warn">
+      Remove
+    </button>
+  </div>
+</div>
