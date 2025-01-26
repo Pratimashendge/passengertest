@@ -15,7 +15,7 @@ import { FormsModule } from '@angular/forms';
     PassCountComponent,
     PassDashComponent,
     PassCardComponent,
-    RemovecomponentComponent
+    RemovecomponentComponent,
   ],
   imports: [
     BrowserModule,
